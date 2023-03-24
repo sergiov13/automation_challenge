@@ -8,7 +8,9 @@ Currently the app only supports the website cheezburger, but it can easily be sc
 The config .json file holds the params required to run this app.
 
 **url**: The url of the website to be scrappe.
+
 **images_dir**: The path that will be used to store the images, thw app will create it if it doesnt exists.
+
 **ammount_images**: How many images will be extracted from the website, the cheezburger website only holds up to 19 images per page, so the app will verify that we are within the minimum (1 image) or maximum (19 images) limits.
 
 *Dependencies:*
