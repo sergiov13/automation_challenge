@@ -1,7 +1,7 @@
 # Scrapping Images from cheezburger
 
-The app required to extraxt 10 images from the website cheezburger. The images should be of meme posts and not advertisments.
-Currently the app only supports the website cheezburger, but it can easily be scaled up to support other webites by adding another function tailored to the new website.
+The app required to extract 10 images from the website cheezburger. The images should be of meme posts and not advertisments.
+Currently the app only supports the website cheezburger, but it can easily be scaled up to support other wesbites by adding another function tailored to the new website.
 
 ## Creating and running Local Environment
 
@@ -25,7 +25,7 @@ First we need to install pipenv if not installed, this will handle our virtual e
 ```
     pip3 install pipenv
 ```
-Once finished well created the virtual enviroment:
+Once finished we'll created the virtual enviroment:
 ```
     pipenv shell
 ```
