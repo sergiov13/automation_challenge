@@ -5,6 +5,11 @@ from bs4 import BeautifulSoup
 
 
 def load_config(file_name: str, logging) -> dict:
+    """
+    Returns the params inside the config file if setted properly, else it will exit.
+
+    :param file_name: path to config.json file
+    """
     config_file = open(file_name)
     config = json.load(config_file)
     config_file.close()
@@ -19,16 +24,22 @@ def load_config(file_name: str, logging) -> dict:
     else:
         logging.error("Configuration file loading failed")
         logging.info("Read README and check configuration file")
-        return {}
+        logging.info("Exiting App")
+        exit()
 
 
 def get_images(config: dict, logging) -> None:
+    """
+    Function that holds main logic of application, will use params in config  to extract the images in the url provided
+    
+    :param file_name: path to config.json file
+    """
     try:
         response = requests.get(config["url"])
         logging.info("Connected to webpage: " + config["url"])
     except:
         logging.error(
-            "Cannot connect to " + config["url"] + " please check config file"
+            "Cannot connect to " + config["url"]
         )
         logging.info("Exiting App")
         exit()

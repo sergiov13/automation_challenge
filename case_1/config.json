@@ -1,5 +1,5 @@
 {
-  "images_dir": "./images/",
   "url": "https://icanhas.cheezburger.com",
+  "images_dir": "./images/",
   "ammount_images": 10
 }
