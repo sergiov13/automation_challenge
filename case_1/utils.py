@@ -14,22 +14,24 @@ def load_config(file_name: str, logging) -> dict:
         and config["ammount_images"] > 1
         and config["ammount_images"] < 19
     ):
-      logging.info("Config Loaded correctly")
-      return config
+        logging.info("Config Loaded correctly")
+        return config
     else:
-      logging.error("Configuration file loading failed")
-      logging.info("Read README and check configuration file")
-      return {}
+        logging.error("Configuration file loading failed")
+        logging.info("Read README and check configuration file")
+        return {}
 
 
 def get_images(config: dict, logging) -> None:
     try:
-      response = requests.get(config["url"])
-      logging.info("Connected to webpage: " + config["url"] )
+        response = requests.get(config["url"])
+        logging.info("Connected to webpage: " + config["url"])
     except:
-      logging.error("Cannot connect to " + config["url"] + " please check config file")
-      logging.info("Exiting App")
-      exit()
+        logging.error(
+            "Cannot connect to " + config["url"] + " please check config file"
+        )
+        logging.info("Exiting App")
+        exit()
     soup = BeautifulSoup(response.content, "html.parser")
 
     # find the first N meme images on the page (exclude sponsored content)
