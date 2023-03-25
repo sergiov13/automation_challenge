@@ -7,4 +7,5 @@ logging.info('App started')
 config = load_config("config/config.json", logging)
 
 get_images(config, logging)
+
 logging.info('App finished')
