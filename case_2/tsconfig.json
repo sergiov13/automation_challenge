@@ -8,6 +8,8 @@
             "expect-webdriverio",
             "@wdio/mocha-framework"
         ],
-        "target": "es2022"
+        "target": "es2022",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
     }
 }

@@ -10,27 +10,19 @@ The config file holds the homepage url that will be used for testing.
     **Typescript** \\
     **NodeJS 18** \\
     **npm**\\
-    **nodeenv** \\
     **wdio** \\
     **mocha** \\
-    **chromedriver** \\
+    **chromedriver (latest version of chrome)** \\
 
 ### Locally
 
-First we need to install pipenv if not installed, this will handle our virtual environment and install dependencies. From terminal while being inside the project folder we run the command:
+First we need to create a copy from the file url.example.json name it "url.json" and fill it with the homepage url to be used.
+
+After that we need to install the dependencies. From terminal while being inside the project oot folder we run the command:
 ```
-    pip3 install pipenv
+    npm install
 ```
-Once finished we'll created the virtual enviroment:
-```
-    pipenv shell
-```
-After we have our virtual enviroment created we will install dependencies specified in pipfile, this will create out pipfile.lock.
-```
-    pipenv install
-```
-Finally run the app with the command:
+We can run the test suite with the command:
 ```
      npx wdio wdio.conf.ts 
 ```
-### Docker

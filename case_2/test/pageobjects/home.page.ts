@@ -16,8 +16,8 @@ class HomePage extends Page {
     /**
     * overwrite specific options to adapt it to page object
     */
-    public open () {
-        return super.open();
+    public open (path: string ) {
+        return super.open(path);
     }
 
     public async clickContactForm() {

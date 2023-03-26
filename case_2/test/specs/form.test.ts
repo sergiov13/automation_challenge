@@ -1,9 +1,10 @@
 import FormPage from '../pageobjects/form.page'
 import HomePage from '../pageobjects/home.page'
+import url from '../../url.json'
 
 describe('Reaching Contact Form', () => {
     it('should open the browser and reach webpage', async () => {
-        await HomePage.open()
+        await HomePage.open(url["url"])
     })
 
     it('should reach the contact form from the homepage', async () => {
