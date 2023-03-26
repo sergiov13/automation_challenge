@@ -8,22 +8,18 @@ import Page from './page';
 class FormPage extends Page {
     /**
      * define selectors using getter methods
-     */
-    public get form () {
-      return $('[name="name"]')
-      
-    }
+     */ 
 
     public get inputFirstName () {
-      return $('[name="name"]:nth-child(1)')
+      return $('//*[@id="__layout"]/div/div/div[3]/div/div/div/div/div/section/div/div[1]/form/div[1]/div/div[1]/input')
     }
-
+    
     public get inputLastName () {
-      return $('[name="name"]')
+      return $('#__layout > div > div > div.site-modal > div > div > div > div > div > section > div > div.form-step.step-1 > form > div.form-last-name-input > div > div.wrapper > input')
     }
 
     public get inputEmail () {
-        return $('[name="email"]');
+        return $('[name="email"]')
     }
 
     public get inputPhoneNumber () {
@@ -34,31 +30,46 @@ class FormPage extends Page {
       return $('[name="units"]');
     }
 
-    // has disabled property when disabled
     public get btnSubmit () {
-        return $('button[type="submit"]');
+        return $('//*[@id="__layout"]/div/div/div[3]/div/div/div/div/div/section/div/div[1]/form/div[6]/div/button');
     }
 
     /**
      * a method to encapsule automation code to interact with the page
      * 
      */
+    
+    public async cleanForm() {
+      await browser.pause(50)
+      await this.inputFirstName.doubleClick()
+      browser.keys("Delete")
+      await this.inputLastName.doubleClick()
+      browser.keys("Delete")
+      await this.inputEmail.click()
+      browser.keys(['Meta', 'A'])
+      await browser.pause(20)
+      browser.keys("Delete")
+      await this.inputPhoneNumber.click()
+      browser.keys(['Meta', 'A'])
+      await browser.pause(20)
+      browser.keys("Delete")
+      await browser.pause(20)
+      await this.inputDoors.doubleClick()
+      await browser.pause(20)
+      browser.keys("Delete")
+      await browser.pause(100)
+    }
+
     public async fillContact(firstname: string , lastname: string , email: string, phonenumber: string, doors: string) {
+      await this.cleanForm()
       await this.inputFirstName.setValue(firstname);
       await this.inputLastName.setValue(lastname);
       await this.inputEmail.setValue(email);
       await this.inputPhoneNumber.setValue(phonenumber);
       await this.inputDoors.setValue(doors);
-        // await this.btnSubmit.click();
+      await browser.pause(200)
     }
-
-    public async cleanForm() {
-      await this.inputFirstName.setValue('');
-      await this.inputLastName.setValue('');
-      await this.inputEmail.setValue('');
-      await this.inputPhoneNumber.setValue('');
-      await this.inputDoors.setValue('');
-    }
+ 
     /**
      * overwrite specific options to adapt it to page object
      */

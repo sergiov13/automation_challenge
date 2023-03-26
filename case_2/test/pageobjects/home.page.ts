@@ -10,7 +10,7 @@ class HomePage extends Page {
      * define selectors using getter methods
      */
     public get btnContact () {
-      return $('button');
+      return $('//*[@id="__layout"]/div/div/div[1]/section[1]/div/div/div/div[1]/div[1]/footer/div/div/button');
     }
 
     /**
