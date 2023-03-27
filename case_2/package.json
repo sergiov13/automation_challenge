@@ -18,6 +18,7 @@
   "devDependencies": {
     "@wdio/local-runner": "^8.6.8",
     "@wdio/mocha-framework": "^8.6.8",
+    "@wdio/selenium-standalone-service": "^8.6.8",
     "@wdio/spec-reporter": "^8.6.8",
     "chromedriver": "^111.0.0",
     "ts-node": "^10.9.1",

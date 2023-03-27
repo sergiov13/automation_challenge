@@ -75,7 +75,7 @@ export const config: Options.Testrunner = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }, {
-        browserName: 'firefox',
+        browserName: 'safari',
     }],
     //
     // ===================
@@ -125,7 +125,7 @@ export const config: Options.Testrunner = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver','vscode','docker'],
-    
+    //'selenium-standalone'
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
