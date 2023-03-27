@@ -1,10 +1,8 @@
 # Testing Suite for Contact Form
 
-The Testing suite should verify the correct fgunctioning of the contact form.
+The Testing suite should verify the correct functioning of the contact form.
 
 ## Creating and running Local Environment
-
-The config file holds the homepage url that will be used for testing.
 
 *Dependencies:*
     **Typescript** \\
@@ -13,13 +11,15 @@ The config file holds the homepage url that will be used for testing.
     **wdio** \\
     **mocha** \\
     **chromedriver (latest version of chrome)** \\
+    **eslint + typescript-eslint** \\
 
 ### Locally
 
-First we need to create a copy from the file url.example.json name it "url.json" and fill it with the homepage url to be used.
+The config file holds the homepage url in json format.
 
+First we need to create a copy of the file url.example.json name it "url.json" and fill it with the homepage url value to be used.
 
-After that we need to install the dependencies. From terminal while being inside the project oot folder we run the command:
+Next we need to install the dependencies. From terminal while being inside the project root folder we run the command:
 ```
     npm install
 ```
