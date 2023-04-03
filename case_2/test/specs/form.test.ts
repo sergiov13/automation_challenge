@@ -36,10 +36,13 @@ describe('Reaching Contact Form', () => {
     
     it('should check contact Form cannot be submitted with an invalid phone number', async () => {
         await FormPage.fillContact("Jhon","Doe","test@test.com","0000","10")
+        await expect(FormPage.inputPhoneNumber).toHaveAttrContaining("class","error")
         await expect(FormPage.btnSubmit).toBeDisabled()
         await FormPage.fillContact("Jhon","Doe","test@test.com","A25-880-1234","10")
+        await expect(FormPage.inputPhoneNumber).toHaveAttrContaining("class","error")
         await expect(FormPage.btnSubmit).toBeDisabled()
         await FormPage.fillContact("Jhon","Doe","test@test.com","","10")
+        await expect(FormPage.inputPhoneNumber).toHaveAttrContaining("class","error")
         await expect(FormPage.btnSubmit).toBeDisabled()
     })
 
